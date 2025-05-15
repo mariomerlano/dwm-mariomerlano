@@ -74,31 +74,32 @@ Select "dwm" from the menu.
 
 KEYBOARD SHORTCUTS
 ----------------
-(Using Super/Windows key as modifier)
+(Using Windows key as modifier)
 
 General:
-    Super+Shift+Q      Quit dwm
-    Super+B            Toggle status bar
-    Super+Space        Toggle between layouts
-    Super+Shift+Space  Toggle floating for current window
-    Super+Shift+C      Kill (close) current window
+    Windows+Shift+Q      Quit dwm
+    Windows+Enter        Launch terminal
+    Windows+B            Toggle status bar
+    Windows+Space        Toggle between layouts
+    Windows+Shift+Space  Toggle floating for current window
+    Windows+Shift+C      Kill (close) current window
 
 Navigation:
-    Super+J            Focus next window
-    Super+K            Focus previous window
-    Super+H            Decrease master area size
-    Super+L            Increase master area size
-    Super+Return       Zoom (move current window to master area)
-    Super+Tab          Switch to previous tag
-    Super+[1-9]        Switch to tag [1-9]
-    Super+Shift+[1-9]  Move window to tag [1-9]
+    Windows+J            Focus next window
+    Windows+K            Focus previous window
+    Windows+H            Decrease master area size
+    Windows+L            Increase master area size
+    Windows+Shift+Enter  Zoom (move current window to master area)
+    Windows+Tab          Switch to previous tag
+    Windows+[1-9]        Switch to tag [1-9]
+    Windows+Shift+[1-9]  Move window to tag [1-9]
 
 Layout Management:
-    Super+T            Set tiled layout (default)
-    Super+F            Set floating layout
-    Super+M            Set monocle layout (fullscreen)
-    Super+I            Increase number of windows in master area
-    Super+D            Decrease number of windows in master area
+    Windows+T            Set tiled layout (default)
+    Windows+F            Set floating layout
+    Windows+M            Set monocle layout (fullscreen)
+    Windows+I            Increase number of windows in master area
+    Windows+D            Decrease number of windows in master area
 
 CONFIGURATION
 ------------
