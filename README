@@ -125,13 +125,6 @@ For a complete setup, consider installing:
 - dmenu: Application launcher
 - slstatus: Status bar for dwm
 
-To install st:
-
-    $ cd ~/repos/dwm-mariomerlano
-    $ git clone https://git.suckless.org/st
-    $ cd st
-    $ sudo make clean install
-
 TROUBLESHOOTING
 --------------
 1. Problem: DWM fails to start
