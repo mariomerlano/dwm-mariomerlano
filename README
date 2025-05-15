@@ -24,9 +24,9 @@ INSTALLATION
 To compile and install dwm system-wide:
 
     $ cd ~/repos/dwm-mariomerlano/dwm
-    $ sudo make clean
-    $ sudo make
-    $ sudo make install
+    $ sudo make clean install
+
+This single command will clean any previous build files, compile, and install dwm in one step.
 
 To create the xinitrc file for dwm:
 
@@ -106,7 +106,7 @@ To customize dwm, edit config.h and recompile:
 
     $ cd ~/repos/dwm-mariomerlano/dwm
     $ nvim config.h     # Make your changes
-    $ sudo make clean install
+    $ sudo make clean install   # The only command necessary to update configs
 
 Main configuration options:
 - borderpx: Border pixel size for windows
