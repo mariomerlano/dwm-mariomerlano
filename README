@@ -85,8 +85,10 @@ General:
     Windows+Shift+Space  Toggle floating for current window
 
 Navigation:
-    Windows+J            Focus next window
-    Windows+K            Focus previous window
+    Alt+Tab            Focus next window
+    Alt+Shift+Tab      Focus previous window
+    Windows+J            Focus next window (alternative)
+    Windows+K            Focus previous window (alternative)
     Windows+H            Decrease master area size
     Windows+L            Increase master area size
     Windows+Shift+Enter  Zoom (move current window to master area)
