@@ -56,8 +56,8 @@ Add the following content to the file:
       unset f
     fi
     
-    # Set a basic background
-    xsetroot -solid "#333333"
+    # Set a black background (change this line to set your desktop background color)
+    xsetroot -solid "#000000"
     
     # Run dwm
     exec dwm
