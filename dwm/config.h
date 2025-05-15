@@ -7,15 +7,15 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Monospace Regular:size=20" };
 static const char dmenufont[]       = "Monospace Regular:size=20";
-static const char col_gray1[]       = "#222222";
+static const char col_black[]       = "#000000";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_turquoise[]    = "#34E2E2";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_turquoise, col_gray1,  col_turquoise  },
+	[SchemeNorm] = { col_gray3, col_black, col_gray2 },
+	[SchemeSel]  = { col_turquoise, col_black,  col_turquoise  },
 };
 
 /* tagging */
@@ -57,7 +57,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_gray1, "-sf", col_turquoise, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_gray3, "-sb", col_black, "-sf", col_turquoise, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
