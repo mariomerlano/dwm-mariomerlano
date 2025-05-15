@@ -79,10 +79,10 @@ KEYBOARD SHORTCUTS
 General:
     Windows+Shift+Q      Quit dwm
     Windows+Enter        Launch terminal
+    Windows+Q            Kill current window
     Windows+B            Toggle status bar
     Windows+Space        Toggle between layouts
     Windows+Shift+Space  Toggle floating for current window
-    Windows+Shift+C      Kill (close) current window
 
 Navigation:
     Windows+J            Focus next window
