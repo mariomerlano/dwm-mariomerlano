@@ -1,2 +1,147 @@
-# dwm-mariomerlano
-Simple dwm configuration.
+DWM-MARIOMERLANO
+===============
+
+Author: Mario Merlano
+License: MIT
+
+DESCRIPTION
+-----------
+Personal build of dwm (Dynamic Window Manager) from suckless.org.
+DWM is a minimalist, fast, and highly customizable tiling window manager for X.
+
+REQUIREMENTS
+-----------
+* Xorg server (libX11, libXinerama)
+* C compiler (gcc or clang)
+* Make
+* Freetype headers (libfreetype6-dev)
+* Fontconfig headers (libfontconfig-dev)
+* Xinerama headers (libxinerama-dev)
+* Root privileges (for system-wide installation)
+
+INSTALLATION
+-----------
+To compile and install dwm system-wide:
+
+    $ cd ~/repos/dwm-mariomerlano/dwm
+    $ sudo make clean
+    $ sudo make
+    $ sudo make install
+
+To create the xinitrc file for dwm:
+
+    $ sudo nvim /etc/X11/xinit/xinitrc.dwm
+
+Add the following content to the file:
+
+    #!/bin/sh
+    # Xinitrc file for dwm
+    
+    userresources=$HOME/.Xresources
+    usermodmap=$HOME/.Xmodmap
+    sysresources=/etc/X11/xinit/.Xresources
+    sysmodmap=/etc/X11/xinit/.Xmodmap
+    
+    # Merge in defaults and keymaps
+    [ -f $sysresources ] && xrdb -merge $sysresources
+    [ -f $sysmodmap ] && xmodmap $sysmodmap
+    [ -f $userresources ] && xrdb -merge $userresources
+    [ -f $usermodmap ] && xmodmap $usermodmap
+    
+    # Start some nice programs
+    if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+      for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+        [ -x "$f" ] && . "$f"
+      done
+      unset f
+    fi
+    
+    # Set a basic background
+    xsetroot -solid "#333333"
+    
+    # Run dwm
+    exec dwm
+
+Make it executable:
+
+    $ sudo chmod +x /etc/X11/xinit/xinitrc.dwm
+
+Set dwm as the default window manager in Slackware:
+
+    $ sudo xwmconfig
+
+Select "dwm" from the menu.
+
+KEYBOARD SHORTCUTS
+----------------
+(Using Super/Windows key as modifier)
+
+General:
+    Super+Shift+Q      Quit dwm
+    Super+B            Toggle status bar
+    Super+Space        Toggle between layouts
+    Super+Shift+Space  Toggle floating for current window
+    Super+Shift+C      Kill (close) current window
+
+Navigation:
+    Super+J            Focus next window
+    Super+K            Focus previous window
+    Super+H            Decrease master area size
+    Super+L            Increase master area size
+    Super+Return       Zoom (move current window to master area)
+    Super+Tab          Switch to previous tag
+    Super+[1-9]        Switch to tag [1-9]
+    Super+Shift+[1-9]  Move window to tag [1-9]
+
+Layout Management:
+    Super+T            Set tiled layout (default)
+    Super+F            Set floating layout
+    Super+M            Set monocle layout (fullscreen)
+    Super+I            Increase number of windows in master area
+    Super+D            Decrease number of windows in master area
+
+CONFIGURATION
+------------
+To customize dwm, edit config.h and recompile:
+
+    $ cd ~/repos/dwm-mariomerlano/dwm
+    $ nvim config.h     # Make your changes
+    $ sudo make clean install
+
+Main configuration options:
+- borderpx: Border pixel size for windows
+- fonts: Font configuration
+- colors: Color scheme for window borders, tags, and status bar
+- tags: Workspace tag names
+- rules: Window rules for specific applications
+- layouts: Available layout modes
+- keys: Keyboard shortcuts
+- buttons: Mouse button bindings
+
+ADDITIONAL TOOLS
+--------------
+For a complete setup, consider installing:
+- st: Simple terminal (recommended terminal for dwm)
+- dmenu: Application launcher
+- slstatus: Status bar for dwm
+
+To install st:
+
+    $ cd ~/repos/dwm-mariomerlano
+    $ git clone https://git.suckless.org/st
+    $ cd st
+    $ sudo make clean install
+
+TROUBLESHOOTING
+--------------
+1. Problem: DWM fails to start
+   Solution: Check Xorg logs for errors: cat ~/.local/share/xorg/Xorg.0.log
+
+2. Problem: Keys not working as expected
+   Solution: Verify your config.h key definitions and recompile
+
+3. Problem: No status bar information
+   Solution: Install and configure slstatus or another status bar program
+
+4. Problem: Windows not appearing where expected
+   Solution: Check rules array in config.h for specific window class rules
