@@ -59,6 +59,10 @@ Add the following content to the file:
     # Set a black background (change this line to set your desktop background color)
     xsetroot -solid "#000000"
     
+    # NOTE: A reboot is required after changing this file for the background color to take effect.
+    # Alternatively, you can run the command "xsetroot -solid #000000" in a terminal 
+    # to change the background immediately without rebooting.
+    
     # Run dwm
     exec dwm
 
